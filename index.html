@@ -3,15 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Note for You</title>
+    <title>Your LDR Gift</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>A Little Note from Me</h1>
-        <button id="reveal-btn">Open Today’s Note</button>
-        <p id="message" class="hidden"></p>
-        <div id="hearts"></div>
+        <!-- 2. Countdown -->
+        <section>
+            <h1>Until We Meet</h1>
+            <div id="countdown">
+                <span id="days">0</span> Days 
+                <span id="hours">0</span> Hours 
+                <span id="minutes">0</span> Minutes 
+                <span id="seconds">0</span> Seconds
+            </div>
+        </section>
+
+        <!-- 1. Love Note -->
+        <section>
+            <h2>Love Note</h2>
+            <button id="reveal-btn">Open Today’s Note</button>
+            <p id="message" class="hidden"></p>
+            <div id="hearts"></div>
+        </section>
+
+        <!-- 3. Virtual Hug -->
+        <section>
+            <h2>Need a Hug?</h2>
+            <button id="hug-btn">Get a Hug</button>
+            <div id="hug-animation" class="hidden">🤗</div>
+        </section>
+
+        <!-- 4. Star-Gazing -->
+        <section>
+            <h2>Our Stars</h2>
+            <canvas id="stars"></canvas>
+            <p id="star-name"></p>
+        </section>
+
+        <!-- 5. Mini Game -->
+        <section>
+            <h2>Find Me!</h2>
+            <div id="game">
+                <div id="player">😊</div>
+                <button id="move-btn">Move</button>
+            </div>
+            <p id="game-message" class="hidden"></p>
+        </section>
+
+        <!-- 6. Mood Tracker -->
+        <section>
+            <h2>How Are You?</h2>
+            <select id="mood">
+                <option value="">Pick a Mood</option>
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="excited">Excited</option>
+            </select>
+            <p id="mood-response" class="hidden"></p>
+        </section>
+
+        <!-- 7. Photo Puzzle -->
+        <section>
+            <h2>Unscramble Us</h2>
+            <div id="puzzle"></div>
+            <p id="puzzle-message" class="hidden"></p>
+        </section>
     </div>
     <script src="script.js"></script>
 </body>
