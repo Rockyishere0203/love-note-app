@@ -1,5 +1,10 @@
-// 2. Countdown
-const visitDate = new Date(2025, 5, 15); // Customize this!
+// Play music on first interaction (due to browser policies)
+document.addEventListener('click', () => {
+    document.getElementById('bg-music').play().catch(e => console.log("Music blocked:", e));
+}, { once: true });
+
+// 2. Countdown (April 12, 2025)
+const visitDate = new Date(2025, 3, 12); // April 12, 2025 (month is 0-based)
 const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');
@@ -25,9 +30,11 @@ updateCountdown();
 
 // 1. Love Notes
 const loveNotes = [
-    "You’re my favorite person ever.",
-    "Counting down to you makes every day better.",
-    "Miss your laugh so much!"
+    "Mannu, U r ntg but divine",
+    "U r the best thing ever happened to me ammi",
+    "My sweet dumbo, u r the best",
+    "BIGGGGG TIGHTTTT HUGSSS",
+    "MY cutie pie"
 ];
 const revealBtn = document.getElementById('reveal-btn');
 const messageEl = document.getElementById('message');
@@ -39,7 +46,7 @@ function showNote() {
     for (let i = 0; i < 5; i++) {
         const heart = document.createElement('div');
         heart.classList.add('heart');
-        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.left = `${Math.random() * 90}%`;
         heartsContainer.appendChild(heart);
         setTimeout(() => heart.remove(), 3000);
     }
@@ -74,11 +81,8 @@ function drawStars() {
 }
 drawStars();
 const starName = document.getElementById('star-name');
-canvas.addEventListener('click', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    starName.textContent = "Our First Kiss Star"; // Customize!
+canvas.addEventListener('click', () => {
+    starName.textContent = "Our Forever Star";
 });
 
 // 5. Mini Game
@@ -86,14 +90,13 @@ const player = document.getElementById('player');
 const moveBtn = document.getElementById('move-btn');
 const gameMessage = document.getElementById('game-message');
 let playerX = 0;
-let playerY = 0;
-const targetX = 150; // "You" to find
+const targetX = 150;
 moveBtn.addEventListener('click', () => {
     playerX += 30;
     if (playerX > 150) playerX = 0;
     player.style.left = `${playerX}px`;
     if (playerX === targetX) {
-        gameMessage.textContent = "Found me! Next visit soon!";
+        gameMessage.textContent = "Found me, my love!";
         gameMessage.classList.remove('hidden');
         setTimeout(() => gameMessage.classList.add('hidden'), 2000);
     }
@@ -103,8 +106,8 @@ moveBtn.addEventListener('click', () => {
 const moodSelect = document.getElementById('mood');
 const moodResponse = document.getElementById('mood-response');
 const responses = {
-    happy: "So glad you’re happy, babe!",
-    sad: "Here’s a virtual cuddle for you.",
+    happy: "My Mannu’s happy—best feeling ever!",
+    sad: "Wrapping you in a big hug, Ammi.",
     excited: "Can’t wait to share that excitement!"
 };
 moodSelect.addEventListener('change', (e) => {
@@ -115,33 +118,23 @@ moodSelect.addEventListener('change', (e) => {
     }
 });
 
-// 7. Photo Puzzle (3x3 grid)
-const puzzle = document.getElementById('puzzle');
-const puzzleMessage = document.getElementById('puzzle-message');
-const pieces = [1, 2, 3, 4, 5, 6, 7, 8, ''];
-const correct = [...pieces];
-let shuffled = pieces.slice().sort(() => Math.random() - 0.5);
-shuffled.forEach((num, i) => {
-    const piece = document.createElement('div');
-    piece.classList.add('puzzle-piece');
-    piece.textContent = num || '';
-    piece.dataset.index = i;
-    puzzle.appendChild(piece);
-});
-puzzle.addEventListener('click', (e) => {
-    const piece = e.target;
-    if (!piece.textContent) return;
-    const empty = Array.from(puzzle.children).find(p => !p.textContent);
-    const pieceIdx = parseInt(piece.dataset.index);
-    const emptyIdx = parseInt(empty.dataset.index);
-    if (Math.abs(pieceIdx - emptyIdx) === 1 || Math.abs(pieceIdx - emptyIdx) === 3) {
-        empty.textContent = piece.textContent;
-        piece.textContent = '';
-        shuffled[emptyIdx] = shuffled[pieceIdx];
-        shuffled[pieceIdx] = '';
-        if (shuffled.join('') === correct.join('')) {
-            puzzleMessage.textContent = "You did it! Love you!";
-            puzzleMessage.classList.remove('hidden');
-        }
-    }
+// Falling Flowers
+function createFlower() {
+    const flower = document.createElement('div');
+    flower.classList.add('flower');
+    flower.style.left = `${Math.random() * 100}vw`;
+    flower.style.animationDuration = `${Math.random() * 5 + 5}s`;
+    document.body.appendChild(flower);
+    setTimeout(() => flower.remove(), 10000);
+}
+setInterval(createFlower, 500);
+
+// Surprise Box
+const surpriseBox = document.getElementById('surprise-box');
+const surpriseBtn = document.getElementById('surprise-btn');
+const surpriseMessage = document.getElementById('surprise-message');
+setTimeout(() => surpriseBox.classList.remove('hidden'), 5000); // Show after 5s
+surpriseBtn.addEventListener('click', () => {
+    surpriseMessage.classList.remove('hidden');
+    setTimeout(() => surpriseMessage.classList.add('hidden'), 3000);
 });
