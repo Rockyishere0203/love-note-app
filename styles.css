@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ff4d94;
+    font-size: 24px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4d94;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d94;
+    transform: rotate(-45deg);
+    animation: float 3s ease-in-out infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d94;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+    100% { transform: translateY(-100px) rotate(-45deg); opacity: 0; }
+}
