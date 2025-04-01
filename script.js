@@ -6,7 +6,7 @@ document.addEventListener('click', () => {
 // Welcome Popup
 const welcome = document.getElementById('welcome');
 setTimeout(() => welcome.classList.remove('hidden'), 1000); // Show after 1s
-setTimeout(() => welcome.classList.add('hidden'), 5000); // Hide after 5s
+setTimeout(() => welcome.classList.add('hidden'), 9000); // Hide after 9s (CSS handles fade)
 
 // Love Letter
 const letterIcon = document.getElementById('letter-icon');
@@ -20,6 +20,7 @@ letterIcon.addEventListener('click', () => {
         hand.style.display = 'none';
         letterContent.classList.remove('hidden');
     }, 2000); // Hand animation lasts 2s
+    setTimeout(() => letter.classList.add('hidden'), 30000); // Letter stays 30s
 });
 
 // 1. Love Notes
