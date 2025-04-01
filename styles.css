@@ -1,27 +1,112 @@
 body {
-    font-family: 'Great Vibes', cursive; /* Romantic font */
+    font-family: 'Great Vibes', cursive;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
     overflow-x: hidden;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
 .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
     max-width: 90%;
     margin: 0 auto;
-    position: relative;
 }
 
 h1 {
-    font-size: 60px;
-    color: #ff4d94;
-    text-align: center;
-    margin-bottom: 30px;
+    font-size: 80px;
+    color: #ff85b3;
+    margin: 20px 0;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
+}
+
+#welcome {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #ff4d94;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 24px;
+    z-index: 10;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.letter-container {
+    margin: 20px 0;
+}
+
+#letter-icon {
+    width: 60px;
+    cursor: pointer;
+}
+
+#letter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255, 245, 238, 0.9); /* Parchment-like */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    z-index: 5;
+}
+
+#hand {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: url('https://img.icons8.com/emoji/48/hand-with-fingers-splayed.png') no-repeat center;
+    background-size: contain;
+    animation: openLetter 2s ease-in-out forwards;
+}
+
+@keyframes openLetter {
+    0% { top: -50px; opacity: 1; }
+    50% { top: 0; }
+    100% { top: 0; opacity: 0; }
+}
+
+#letter-content {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-shadow: none;
+    animation: revealContent 1s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes revealContent {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 section {
@@ -33,7 +118,7 @@ section {
 }
 
 h2 {
-    color: #ff3385;
+    color: #ff4d94;
     font-size: 28px;
     margin-bottom: 15px;
 }
@@ -54,15 +139,6 @@ button:hover {
 
 .hidden {
     display: none;
-}
-
-/* Countdown */
-#countdown {
-    font-size: 20px;
-}
-#countdown span {
-    font-weight: bold;
-    color: #ff85b3;
 }
 
 /* Love Note */
@@ -112,20 +188,6 @@ button:hover {
 }
 #star-name { font-size: 18px; }
 
-/* Game */
-#game {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background: rgba(224, 224, 224, 0.5);
-    margin: 0 auto;
-    border-radius: 10px;
-}
-#player {
-    position: absolute;
-    font-size: 35px;
-}
-
 /* Mood */
 #mood {
     padding: 8px;
@@ -139,37 +201,14 @@ button:hover {
 /* Falling Flowers */
 .flower {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background: url('https://img.icons8.com/emoji/48/cherry-blossom.png') no-repeat center;
     background-size: contain;
     animation: fall linear infinite;
+    z-index: 3;
 }
 @keyframes fall {
     0% { transform: translateY(-50px); opacity: 1; }
     100% { transform: translateY(100vh); opacity: 0; }
-}
-
-/* Surprise Box */
-#surprise-box {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-#surprise-btn {
-    background: #ff85b3;
-    font-size: 16px;
-}
-#surprise-message {
-    background: rgba(255, 255, 255, 0.9);
-    color: #ff4d94;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 10px;
-    font-size: 20px;
-    animation: pop 0.5s ease-in-out;
-}
-@keyframes pop {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
 }
