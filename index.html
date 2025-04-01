@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#MaAa - Our Love</title>
+    <title>#MaAa - For You, Mannu</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
     <audio id="bg-music" src="piano.mp3" loop></audio>
+    <div class="overlay"></div>
     <div class="container">
         <h1>#MaAa</h1>
-        <section>
-            <h2>Until We Reunite</h2>
-            <div id="countdown">
-                <span id="days">0</span> Days 
-                <span id="hours">0</span> Hours 
-                <span id="minutes">0</span> Minutes 
-                <span id="seconds">0</span> Seconds
+        <div id="welcome" class="hidden">
+            <p>Welcome, my Mannu! Open this every day for a new love note from me.</p>
+        </div>
+        <div class="letter-container">
+            <img id="letter-icon" src="https://img.icons8.com/emoji/48/love-letter.png" alt="Love Letter">
+            <div id="letter" class="hidden">
+                <div id="hand"></div>
+                <div id="letter-content" class="hidden">
+                    <h2>My Dearest Mannu,</h2>
+                    <p>April 12, 2025—here we are, together at last. You’re my divine, my cutie pie, my everything. From that first “hi” to every laugh you’ve gifted me, I’ve been counting the seconds to see your eyes, to hold you tight. You’re the best thing that’s ever happened to me, Ammi, my sweet dumbo. This moment, our first touch, is a dream come true—and it’s just the start. I love you beyond words, and this little world I built is yours forever.</p>
+                    <p>Yours always,<br>Your Ammi</p>
+                </div>
             </div>
-        </section>
+        </div>
         <section>
-            <h2>Your Love Note</h2>
+            <h2>Your Daily Love Note</h2>
             <button id="reveal-btn">Open Today’s Note</button>
             <p id="message" class="hidden"></p>
             <div id="hearts"></div>
@@ -36,14 +43,6 @@
             <p id="star-name"></p>
         </section>
         <section>
-            <h2>Find Me, Ammi!</h2>
-            <div id="game">
-                <div id="player">😊</div>
-                <button id="move-btn">Move</button>
-            </div>
-            <p id="game-message" class="hidden"></p>
-        </section>
-        <section>
             <h2>How’s My Mannu?</h2>
             <select id="mood">
                 <option value="">Pick a Mood</option>
@@ -53,10 +52,6 @@
             </select>
             <p id="mood-response" class="hidden"></p>
         </section>
-        <div id="surprise-box" class="hidden">
-            <button id="surprise-btn">A Surprise for You!</button>
-            <div id="surprise-message" class="hidden">Nm, I just love u a lot</div>
-        </div>
     </div>
     <script src="script.js"></script>
 </body>
