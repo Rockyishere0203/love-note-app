@@ -1,32 +1,26 @@
-// Play music on first interaction (due to browser policies)
+// Play music on first interaction
 document.addEventListener('click', () => {
     document.getElementById('bg-music').play().catch(e => console.log("Music blocked:", e));
 }, { once: true });
 
-// 2. Countdown (April 12, 2025)
-const visitDate = new Date(2025, 3, 12); // April 12, 2025 (month is 0-based)
-const daysEl = document.getElementById('days');
-const hoursEl = document.getElementById('hours');
-const minutesEl = document.getElementById('minutes');
-const secondsEl = document.getElementById('seconds');
-function updateCountdown() {
-    const now = new Date();
-    const timeLeft = visitDate - now;
-    if (timeLeft <= 0) {
-        daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = 0;
-        return;
-    }
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    daysEl.textContent = days;
-    hoursEl.textContent = hours;
-    minutesEl.textContent = minutes;
-    secondsEl.textContent = seconds;
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
+// Welcome Popup
+const welcome = document.getElementById('welcome');
+setTimeout(() => welcome.classList.remove('hidden'), 1000); // Show after 1s
+setTimeout(() => welcome.classList.add('hidden'), 5000); // Hide after 5s
+
+// Love Letter
+const letterIcon = document.getElementById('letter-icon');
+const letter = document.getElementById('letter');
+const hand = document.getElementById('hand');
+const letterContent = document.getElementById('letter-content');
+letterIcon.addEventListener('click', () => {
+    letter.classList.remove('hidden');
+    hand.style.display = 'block';
+    setTimeout(() => {
+        hand.style.display = 'none';
+        letterContent.classList.remove('hidden');
+    }, 2000); // Hand animation lasts 2s
+});
 
 // 1. Love Notes
 const loveNotes = [
@@ -39,7 +33,7 @@ const loveNotes = [
 const revealBtn = document.getElementById('reveal-btn');
 const messageEl = document.getElementById('message');
 const heartsContainer = document.getElementById('hearts');
-function showNote() {
+revealBtn.addEventListener('click', () => {
     const today = new Date().getDate() % loveNotes.length;
     messageEl.textContent = loveNotes[today];
     messageEl.classList.remove('hidden');
@@ -50,8 +44,7 @@ function showNote() {
         heartsContainer.appendChild(heart);
         setTimeout(() => heart.remove(), 3000);
     }
-}
-revealBtn.addEventListener('click', showNote);
+});
 
 // 3. Virtual Hug
 const hugBtn = document.getElementById('hug-btn');
@@ -82,24 +75,7 @@ function drawStars() {
 drawStars();
 const starName = document.getElementById('star-name');
 canvas.addEventListener('click', () => {
-    starName.textContent = "Our Forever Star";
-});
-
-// 5. Mini Game
-const player = document.getElementById('player');
-const moveBtn = document.getElementById('move-btn');
-const gameMessage = document.getElementById('game-message');
-let playerX = 0;
-const targetX = 150;
-moveBtn.addEventListener('click', () => {
-    playerX += 30;
-    if (playerX > 150) playerX = 0;
-    player.style.left = `${playerX}px`;
-    if (playerX === targetX) {
-        gameMessage.textContent = "Found me, my love!";
-        gameMessage.classList.remove('hidden');
-        setTimeout(() => gameMessage.classList.add('hidden'), 2000);
-    }
+    starName.textContent = "Our First Meeting Star";
 });
 
 // 6. Mood Tracker
@@ -128,13 +104,3 @@ function createFlower() {
     setTimeout(() => flower.remove(), 10000);
 }
 setInterval(createFlower, 500);
-
-// Surprise Box
-const surpriseBox = document.getElementById('surprise-box');
-const surpriseBtn = document.getElementById('surprise-btn');
-const surpriseMessage = document.getElementById('surprise-message');
-setTimeout(() => surpriseBox.classList.remove('hidden'), 5000); // Show after 5s
-surpriseBtn.addEventListener('click', () => {
-    surpriseMessage.classList.remove('hidden');
-    setTimeout(() => surpriseMessage.classList.add('hidden'), 3000);
-});
