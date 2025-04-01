@@ -1,9 +1,9 @@
 const loveNotes = [
-    "You’re the best part of my day, every day.",
-    "I’m counting the minutes until I see you again.",
-    "You make my heart do little flips!",
-    "Sending you a big hug from miles away.",
-    "You’re my favorite person in the whole world."
+    "Mannu,U r ntg but divine",
+    "U r the best thing ever happened to me ammi",
+    "My sweet dumbo, u r the best",
+    "BIGGGGG TIGHTTTT HUGSSS",
+    "MY cutie pie"
 ];
 
 const revealBtn = document.getElementById('reveal-btn');
