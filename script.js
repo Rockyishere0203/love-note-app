@@ -25,7 +25,7 @@ letterIcon.addEventListener('click', () => {
 
 // 1. Love Notes
 const loveNotes = [
-  "You deserve the best, baby. I hope i will be that best someday"
+  "If you were the sun and i was the clouds,I would cover you forever to keep your shining beauty to myself."
 ];
 const revealBtn = document.getElementById('reveal-btn');
 const messageEl = document.getElementById('message');
