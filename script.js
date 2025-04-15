@@ -25,11 +25,7 @@ letterIcon.addEventListener('click', () => {
 
 // 1. Love Notes
 const loveNotes = [
-    "Mannu, U r ntg but divine",
-    "U r the best thing ever happened to me ammi",
-    "My sweet dumbo, u r the best",
-    "BIGGGGG TIGHTTTT HUGSSS",
-    "MY cutie pie"
+  "You deserve the best, baby. I hope i will be that best someday"
 ];
 const revealBtn = document.getElementById('reveal-btn');
 const messageEl = document.getElementById('message');
