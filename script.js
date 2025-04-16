@@ -25,7 +25,7 @@ letterIcon.addEventListener('click', () => {
 
 // 1. Love Notes
 const loveNotes = [
-  "If you were the sun and i was the clouds,I would cover you forever to keep your shining beauty to myself."
+  "I love you but delete me from your life."
 ];
 const revealBtn = document.getElementById('reveal-btn');
 const messageEl = document.getElementById('message');
