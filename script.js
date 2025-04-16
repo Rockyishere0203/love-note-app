@@ -25,7 +25,17 @@ letterIcon.addEventListener('click', () => {
 
 // 1. Love Notes
 const loveNotes = [
-  "I love you but delete me from your life."
+  "Take care of yourself ammi."
+    "I love you way too much just to forget you, we don't forget stars"
+"you are my lifeline"
+"Maybe in next life, things will be fine between us"
+"Am i too hard to love?"
+"Why don't you come and hug me rn?"
+"Please be fine lovie"
+"I love you"
+"There is no one like you"
+"You are the fucking best"
+"My life's purpose was fulfilled when i kissed your hands"
 ];
 const revealBtn = document.getElementById('reveal-btn');
 const messageEl = document.getElementById('message');
